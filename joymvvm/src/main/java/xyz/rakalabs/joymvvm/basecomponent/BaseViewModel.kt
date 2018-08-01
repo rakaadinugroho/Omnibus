@@ -2,7 +2,7 @@ package xyz.rakalabs.joymvvm.basecomponent
 
 import android.arch.lifecycle.ViewModel
 
-class BaseViewModel<T>: ViewModel() {
+open class BaseViewModel<T>: ViewModel() {
     var view: T? = null
     fun attachView(view: T) {
         this.view = view
