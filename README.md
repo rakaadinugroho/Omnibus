@@ -7,16 +7,16 @@ Omnibus is Starter Pack Library to Build Solid Architecture Apps with MVVM Desig
 ### How to Use
 ```gradle
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 ```gradle
 dependencies {
-	        implementation 'com.github.rakaadinugroho:Omnibus:$OMNIBUS_VERSION'
-	}
+	implementation 'com.github.rakaadinugroho:Omnibus:$OMNIBUS_VERSION'
+}
 ```
 ### Features
 
