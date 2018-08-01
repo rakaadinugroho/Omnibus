@@ -55,6 +55,32 @@ class AuthViewModel: BaseViewModel<AuthView>() {
 interface AuthView : BaseView {
 	fun loadUserData()
 }
+```
+### Integration with KOIN
+Create Koin Module Component first
+```kotlin
+val myModule : Module = applicationContext {
+    viewModel { AuthViewModel(get()) }
+    provide { AuthView() as Repository }
+}
+```
+### Starting KOIN Component
+```kotlin
+class MyApplication : Application(){
+    override fun onCreate() {
+        super.onCreate()
+        startKoin(this, listOf(myModule))
+    }
+}
+```
 
+### With JoyMVVM Omnibus
+With Omnibus you have to Enjoyable Design Patter, You have'nt to Declare Component Like
+```kotlin
+val model  = getViewModel<MyViewModel>()
+```
+or
+```kotlin
+val model by viewModel<MyViewModel>()
 ```
 **Enjoy with MVVM!**
