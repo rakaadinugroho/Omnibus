@@ -28,4 +28,4 @@ You can also:
   - Use Utils Component
   - Simple Permission Utils
 
-[enJoy with MVVM!]
+**Enjoy with MVVM!**
