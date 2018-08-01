@@ -27,5 +27,34 @@ dependencies {
 You can also:
   - Use Utils Component
   - Simple Permission Utils
+  
+# Sample
+## Base Component
+You can extends your activities with ``` BaseActivity<YourDataBinding, YourViewModel>``` or if you use Fragment ``` BaseFragment<YourDataBinding, YourViewModel>```
+```kotlin
+class AuthActivity : BaseActivity<ActivityAuthBinding, AuthViewModel>() {
+    override val layoutId: Int
+        get() = R.layout.activity_auth
+    override val initViewModel: KClass<AuthViewModel>
+        get() = AuthViewModel::class
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+}
+```
+## MVVM
+### ViewModel
+```kotlin
+class AuthViewModel: BaseViewModel<AuthView>() {
+	// your action
+}
+```
+### View
+```kotlin
+interface AuthView : BaseView {
+	fun loadUserData()
+}
+
+```
 **Enjoy with MVVM!**
